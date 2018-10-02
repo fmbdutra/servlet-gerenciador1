@@ -17,23 +17,21 @@ import br.com.alura.gerenciador.dao.UsuarioDAO;
 public class Login extends HttpServlet {
 
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-	        throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-	    PrintWriter writer = resp.getWriter();
+		PrintWriter writer = resp.getWriter();
 
-	    String email = req.getParameter("email");
-	    String senha = req.getParameter("senha");
+		String email = req.getParameter("email");
+		String senha = req.getParameter("senha");
 
-	    Usuario usuario = new UsuarioDAO().buscaPorEmailESenha(email, senha);
+		Usuario usuario = new UsuarioDAO().buscaPorEmailESenha(email, senha);
 
-	    if (usuario == null) {
-	        writer.println("<html><body>Usuário ou senha inválida</body></html>");
-	    } else {
-	        HttpSession session = req.getSession();
-	        session.setAttribute("usuario.logado", usuario);
-	        writer.println("<html><body>Usuário logado: " + email
-	                + "</body></html>");
-	    }
+		if (usuario == null) {
+			writer.println("<html><body>Usuário ou senha inválida</body></html>");
+		} else {
+			HttpSession session = req.getSession();
+			session.setAttribute("usuario.logado", usuario);
+			writer.println("<html><body>Usuário logado: " + email + "</body></html>");
+		}
 	}
 }

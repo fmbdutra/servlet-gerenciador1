@@ -15,26 +15,48 @@ import br.com.alura.gerenciador.dao.EmpresaDAO;
 
 @WebServlet(urlPatterns = "/busca")
 public class BuscaEmpresa extends HttpServlet {
+	
+	public BuscaEmpresa(){
+	System.out.println("Instanciando uma Servlet do tipo BuscaEmpresa " + this);
+	}
+	
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-	        throws ServletException, IOException {
+	public void init() throws ServletException {
+	    super.init();
+	    System.out.println("Inicializando a Servlet " + this);
+	}
 
-	    PrintWriter writer = resp.getWriter();
-	    writer.println("<html>");
-	    writer.println("<body>");
-	    writer.println("Resultado da busca:<br/>");
+	@Override
+	public void destroy() {
+	    super.destroy();
+	    System.out.println("Destruindo a Servlet " + this);
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-	    String filtro = req.getParameter("filtro");
-	    Collection<Empresa> empresas = new EmpresaDAO()
-	            .buscaPorSimilaridade(filtro);
+		PrintWriter writer = resp.getWriter();
+		writer.println("<html>");
+		writer.println("<body>");
+		writer.println("Resultado da busca:<br/>");
 
-	    writer.println("<ul>");
-	    for (Empresa empresa : empresas) {
-	        writer.println("<li>" + empresa.getId() + ": " + empresa.getNome() + "</li>");
+		String filtro = req.getParameter("filtro");
+		
+		try {
+	        Thread.sleep(10000);
+	    } catch (InterruptedException e) {
+	        e.printStackTrace();
 	    }
-	    writer.println("</ul>");
+		
+		Collection<Empresa> empresas = new EmpresaDAO().buscaPorSimilaridade(filtro);
 
-	    writer.println("</body>");
-	    writer.println("</html>");
+		writer.println("<ul>");
+		for (Empresa empresa : empresas) {
+			writer.println("<li>" + empresa.getId() + ": " + empresa.getNome() + "</li>");
+		}
+		writer.println("</ul>");
+
+		writer.println("</body>");
+		writer.println("</html>");
 	}
 }
