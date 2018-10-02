@@ -16,7 +16,7 @@ import br.com.alura.gerenciador.dao.EmpresaDAO;
 @WebServlet(urlPatterns = "/busca")
 public class BuscaEmpresa extends HttpServlet {
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 	        throws ServletException, IOException {
 
 	    PrintWriter writer = resp.getWriter();
