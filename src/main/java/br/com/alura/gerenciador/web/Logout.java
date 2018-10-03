@@ -11,20 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet(urlPatterns = "/logout")
 public class Logout extends HttpServlet {
 
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	public String executa(HttpServletRequest req, HttpServletResponse resp) {
 
-		HttpSession session = req.getSession();
+		req.getSession().removeAttribute("usuarioLogado");
 
-		session.removeAttribute("usuarioLogado");
+		return "/WEB-INF/paginas/logout.html";
 
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/paginas/logout.html");
-		dispatcher.forward(req, resp);
-
-		PrintWriter writer = resp.getWriter();
-		writer.println("<html><body>Logout efetuado</body></html>");
 	}
 }

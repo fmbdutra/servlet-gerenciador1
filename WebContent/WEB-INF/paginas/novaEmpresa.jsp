@@ -11,7 +11,7 @@
 	<br>
 	<br>
 
-	<form action="busca" method="post">
+	<form action="executa?tarefa=BuscaEmpresa" method="post">
 		<input type="submit" value="Buscar Empresas" />
 	</form>
 	

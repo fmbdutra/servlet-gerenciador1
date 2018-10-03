@@ -8,13 +8,15 @@
 		Logado como: ${usuarioLogado.email}<br/>
 	</c:if>
 
-	<form action="novaEmpresa" method="post">
+	<form action="executa" method="post">
+	<input type="hidden" name="tarefa" value="NovaEmpresa" />
 		<table>
 			<tr>
 				<td>Nome:</td>
 				<td><input type="text" name="nome" /></td>
 				<br />
 			<tr>
+				<input type="hidden" name="tarefa" value="NovaEmpresa" />
 				<td><input type="submit" value="Enviar" /></td>
 			</tr>
 		</table>
@@ -34,11 +36,25 @@
 		</table>
 	</form>
 
-	<form action="logout" method="post">
+	<!--  
+	<form action="executa?tarefa=Logout" method="post">  
+			<input type="submit" value="Logout" />
+	</form>	
+	
+	OU 
+	-->
+	<form action="executa" method="post">
+		<input type="hidden" name="tarefa" value="Logout" />
 		<input type="submit" value="Logout" />
 	</form>
+<!--  
+	<form action="busca" method="get">
+		<input type="submit" value="Buscar Empresas" />
+	</form>
+-->
 
-	<form action="busca" method="post">
+
+<form action="executa?tarefa=BuscaEmpresa" method="post">
 		<input type="submit" value="Buscar Empresas" />
 	</form>
 
