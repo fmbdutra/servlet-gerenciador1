@@ -1,7 +1,12 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <body>
 	Bem vindo ao nosso gerenciador de empresas!
 	<br />
+	
+	<c:if test="${usuarioLogado!=null}">
+		Logado como: ${usuarioLogado.email}<br/>
+	</c:if>
 
 	<form action="novaEmpresa" method="post">
 		<table>
@@ -20,12 +25,10 @@
 			<tr>
 				<td>Email:</td>
 				<td><input type="text" name="email" /></td>
-			</tr>
-			<tr>
+			
 				<td>Senha:</td>
 				<td><input type="password" name="senha" /></td>
-			</tr>
-			<tr>
+			
 				<td><input type="submit" value="Login" /></td>
 			</tr>
 		</table>
