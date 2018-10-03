@@ -13,5 +13,9 @@
 			<li>${empresa.id} - ${empresa.nome}</li>
 		</c:forEach>
 	</ul>
+	
+	<form action="/gerenciador" method="post">
+		<input type="submit" value="Inicio" />
+	</form>
 </body>
 </html>

@@ -11,13 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class Logout extends HttpServlet {
+public class Logout implements Tarefa {
 
 	public String executa(HttpServletRequest req, HttpServletResponse resp) {
+		
+		HttpSession session = req.getSession();
+        session.removeAttribute("usuarioLogado");
 
-		req.getSession().removeAttribute("usuarioLogado");
-
-		return "/WEB-INF/paginas/logout.html";
+		return "WEB-INF/paginas/logout.html";
 
 	}
 }
