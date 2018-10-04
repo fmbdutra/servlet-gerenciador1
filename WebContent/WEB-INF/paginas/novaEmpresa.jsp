@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Empresa adicionada</title>
 </head>
 <body>
 	Empresa adicionada: ${nome}
@@ -12,8 +12,10 @@
 	<br>
 
 	<form action="executa?tarefa=BuscaEmpresa" method="post">
-		<input type="submit" value="Buscar Empresas" />
+		<input type="submit" value="Exibir Empresas"/>
 	</form>
-	
+<br />
+	<form action="/gerenciador" method="post" >
+		<input type="submit" value="Início" />
 </body>
 </html>

@@ -3,12 +3,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Login</title>
 </head>
 <body>
 
 	<c:if test="${usuarioLogado != null}">
 	Você esta logado como: ${usuarioLogado.email}
+
 	</c:if>
 
 	<c:if test="${usuarioLogado == null}">
@@ -21,11 +22,7 @@
 		<tr>
 			<td>
 				<form action="/gerenciador" method="post">
-					<input type="submit" value="Inicio" />
-
-					<form action="executa?tarefa=BuscaEmpresa" method="post">
-						<input type="submit" value="Buscar Empresas" />
-					</form>
+					<input type="submit" value="Início" />
 			</td>
 		</tr>
 	</table>
