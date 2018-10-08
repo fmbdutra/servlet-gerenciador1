@@ -1,4 +1,4 @@
-# curso-servlet1 - Projeto Aprendizado de Servlet
+# Projeto Aprendizado de Servlet
 
 Baseado em aulas do curso online do Alura - "Curso Servlets: Fundamentos de Java na Web"<br>
 Disponível em: https://cursos.alura.com.br/course/servlet-3-e-fundamentos-web
