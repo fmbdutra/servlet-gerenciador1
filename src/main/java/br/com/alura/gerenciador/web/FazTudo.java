@@ -20,7 +20,7 @@ public class FazTudo extends HttpServlet  {
 	    String tarefa = req.getParameter("tarefa");
 	    if (tarefa == null)
 	        throw new IllegalArgumentException(
-	                "Você esqueceu de passar a tarefa");
+	                "Voce esqueceu de passar a tarefa");
 	    try {
 	        String nomeDaClasse = "br.com.alura.gerenciador.web." + tarefa;
 	        Class<?> type = Class.forName(nomeDaClasse);
