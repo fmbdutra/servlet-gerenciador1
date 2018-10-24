@@ -17,5 +17,6 @@
 <br />
 	<form action="/gerenciador" method="post" >
 		<input type="submit" value="Início" />
+	</form>
 </body>
 </html>
