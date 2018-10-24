@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = "/executa")
 public class FazTudo extends HttpServlet  {
 
+	private static final long serialVersionUID = 6626322586019870362L;
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
