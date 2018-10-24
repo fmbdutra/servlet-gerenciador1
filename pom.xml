@@ -9,6 +9,19 @@
 
 	<build>
 		<finalName>gerenciador1</finalName>
+		<plugins>
+			<plugin>
+
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<!-- Versão do java -->
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 	<dependencies>
 
