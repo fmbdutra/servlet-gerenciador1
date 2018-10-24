@@ -1,9 +1,10 @@
-html,
+/* html,
 body {
-  height: 100%;
-}
+  
+} */
 
-body {
+.bodyform {
+	height: 100%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -18,6 +19,7 @@ body {
   max-width: 330px;
   padding: 15px;
   margin: auto;
+  
 }
 .form-signin .checkbox {
   font-weight: 400;
